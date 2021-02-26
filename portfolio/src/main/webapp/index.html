@@ -4,21 +4,41 @@
     <meta charset="UTF-8">
     <title>Dario Mtz</title>
     <link rel="stylesheet" href="style.css">
-    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
   </head>
   <body>
-    <header></header>
-    <main>
-        <div id="content">
-            <h1>My Portfolio</h1>
-            <p>This is my portfolio.</p>
-            <p>Click <a href="/hello">here</a> to see content created by server code.</p>
-            <p>Click here to get a random message:</p>
-            <button onclick="addRandomGreeting()">Hello</button>
-            <div id="greeting-container"></div>
+    <header>
+        <nav class="navbar navbar-light bg-light">
+            <div class="container-fluid">
+                <span class="navbar-brand mb-0 h1">Dario Mtz</span>
+            </div>
+        </nav>
+    </header>
+    <main class="container-fluid">
+        <div class="row m-5">
+            <div class="col-12 col-lg-6 p-5">
+                <h1>My Web Portfolio</h1>
+                <p>This is my portfolio. Here I am going to write a little bit about myself</p>
+            </div>
+            <div class="col-12 col-lg-6 p-5">
+                <img class="img-fluid rounded-3 shadow-lg m-auto" src="/images/profile.jpg">
+            </div>
+        </div>
+        <div class="container-fluid">
+            <h1>Fun facts about me!</h1>
+            <p>Here I will add facts about me</p>
+        </div>
+        <div class="container-fluid">
+            <h1>Projects</h1>
+            <p>Here I will add my projects</p>
+        </div>
+        <div class="container-fluid">
+            <h1>Experience</h1>
+            <p>Here I will add experience related to work and extracurricular activities</p>
         </div>
     </main>
     <footer></footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
     <script src="script.js"></script>
   </body>
 </html>
