@@ -15,14 +15,59 @@
 /**
  * Adds a random greeting to the page.
  */
-function addRandomGreeting() {
-  const greetings =
-      ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
+const projects = [
+    {
+        title: 'Interns GDL Website',
+        description: 'A website built with React.js that uses the Blogger Rest API v3 as a Content Manager System.',
+        repository: 'https://github.com/interns-gdl/Interns-GDL-Website',
+        link: 'https://interns-gdl.web.app/',
+        image: 'https://1.bp.blogspot.com/-bsCfc6qwAiA/YAWTsa7W6aI/AAAAAAAAhaQ/7w3Cy4q0desSkg3wrYgtbhP8k9dFHRFugCLcBGAsYHQ/w400-h400/INTERNS%2BGDL.png',
+        imageFluid: false,
+    },
+    {
+        title: 'Play Monopoly',
+        description: 'A web aplication to play monopoly that allows you to make transactions in real time.',
+        repository: 'https://github.com/interns-gdl/play-monopoly',
+        link: 'https://play-monopoly.web.app/',
+        image: 'https://i.pinimg.com/originals/b0/b2/48/b0b248f91cefb344ec92b272eadd860b.png',
+        imageFluid: true,
+    },
+];
 
-  // Pick a random greeting.
-  const greeting = greetings[Math.floor(Math.random() * greetings.length)];
+var projectIndex = 0;
 
-  // Add it to the page.
-  const greetingContainer = document.getElementById('greeting-container');
-  greetingContainer.innerText = greeting;
+function nextProject() {
+    projectIndex++;
+    projectIndex%=projects.length;
+    showProject();
+}
+
+function previousProject() {
+    projectIndex--;
+
+    if(projectIndex < 0){
+        projectIndex = projects.length -1
+    }
+
+    showProject();
+}
+
+function showProject(){
+    project = projects[projectIndex];
+
+    document.getElementById('projectTitle').innerHTML = project.title;
+    document.getElementById('projectDescription').innerHTML = project.description;
+    document.getElementById('projectRepository').setAttribute('href', project.repository);
+
+    let projectImage = document.getElementById('projectImage')
+    projectImage.setAttribute('src', project.image);
+
+    let projectLinkBtn = document.getElementById('projectLink');
+    if(project.link){
+        projectLinkBtn.setAttribute('href', project.link);
+        projectLinkBtn.classList.remove('d-none');
+    }else{
+        projectLinkBtn.classList.add('d-none');
+    }
+    
 }
