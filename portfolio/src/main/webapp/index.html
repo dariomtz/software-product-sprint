@@ -2,18 +2,88 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>My Portfolio</title>
+    <title>Dario Mtz</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
   </head>
   <body>
-    <div id="content">
-      <h1>My Portfolio</h1>
-      <p>This is my portfolio.</p>
-      <p>Click <a href="/hello">here</a> to see content created by server code.</p>
-      <p>Click here to get a random message:</p>
-      <button onclick="addRandomGreeting()">Hello</button>
-      <div id="greeting-container"></div>
-    </div>
+    <header>
+        <nav class="navbar navbar-light bg-light">
+            <div class="container-fluid">
+                <span class="navbar-brand mb-0 h1">Dario Mtz</span>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="row m-5">
+            <div class="col-12 col-lg-6 px-lg-5 pb-4 pb-lg-0 d-flex align-items-center">
+                <div>
+                    <h1>Who am I?</h1>
+                    <hr>
+                    <p>My name is Dario Martinez and I am from Guadalajara Jalisco, Mexico.</p>
+                    <p>I am passionate about computer science, learning and working towards becoming a Software Engineer.</p>
+                    <p>I study Computer Systems Engineering at ITESO (Western Institute of Technology and Higher Education) and I expect to graduate on May 2023.</p>
+                    <p>My personal mision is to help people accomplish their goals through education.</p>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6 px-lg-5">
+                <img class="img-fluid rounded-3 shadow-lg m-auto" src="/images/profile.jpg">
+            </div>
+        </div>
+        <div class="container-fluid text-center m-0 py-4 bg-light" style="height: 100vh;">
+            <h1>Projects</h1>
+            <div class="row align-items-center h-75">
+                <button id="previous" class="btn btn-light h-100 col-2" onclick="previousProject()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
+                        <path d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+                    </svg>
+                </button>
+                <div class="col-8">
+                    <div class="row">
+                        <div class="col-12 col-lg-6 py-lg-5 py-2 px-5">
+                            <div class="d-flex align-items-center bg-white rounded-3 w-100 h-100">
+                                <div class="container my-3">
+                                    <h4 id="projectTitle">Interns GDL Website</h4>
+                                    <p id="projectDescription">A website built with React.js that uses the Blogger Rest API v3 as a Content Manager System.</p>
+                                    <a id="projectRepository" class="btn btn-info m-1" href="https://github.com/interns-gdl/Interns-GDL-Website" target="_blank">See the code</a>
+                                    <a id="projectLink" class="btn btn-info m-1" href="https://interns-gdl.web.app/" target="_blank">View project</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 py-lg-5 py-2 px-5">
+                            <img id="projectImage" class="img-fluid rounded-3"  src="https://1.bp.blogspot.com/-bsCfc6qwAiA/YAWTsa7W6aI/AAAAAAAAhaQ/7w3Cy4q0desSkg3wrYgtbhP8k9dFHRFugCLcBGAsYHQ/w400-h400/INTERNS%2BGDL.png">
+                        </div>
+                    </div>        
+                </div>
+                <button id="next" class="btn btn-light h-100 col-2" onclick="nextProject()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                        <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                    </svg>
+                </button>
+            </div>
+            
+        </div>
+        <hr>
+        <div class="container-fluid">
+            <h1>Experience</h1>
+            <ul>
+                <li>hellou</li>
+            </ul>
+        </div>
+        <hr>
+        <div class="container-fluid">
+            <h1>About me</h1>
+            <ul>
+                <li>Speak spanish, english and a bit of german, hallo.</li>
+                <li>I love fiction, superheroes, harry potter, starwars, etc.</li>
+                <li>My favorite sport is Formula 1.</li>
+                <li>I am a competitive programmer! </li>
+                <li>My favorite artist is Logic and my favorite band is Muse </li>
+            </ul>
+        </div>
+    </main>
+    <footer></footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
   </body>
 </html>
