@@ -7,15 +7,27 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
   </head>
   <body>
-    <header>
-        <nav class="navbar navbar-light bg-light">
+    <header class="fixed-top">
+        <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
             <div class="container-fluid">
-                <span class="navbar-brand mb-0 h1">Dario Mtz</span>
+                <a class="navbar-brand" href="#home">Dario Mtz</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                    </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link" href="#projects">Projects</a>
+                    <a class="nav-link" href="#experience">Experience</a>
+                    <a class="nav-link" href="#about">About me</a>
+                    <a class="nav-link" href="/files/resume.pdf" target="_blank">Resume</a>
+                </div>
+                </div>
             </div>
+
         </nav>
     </header>
-    <main>
-        <div class="row m-5">
+    <main id="home" class="pt-5">
+        <div class="row p-5 bg-white">
             <div class="col-12 col-lg-6 px-lg-5 pb-4 pb-lg-0 d-flex align-items-center">
                 <div>
                     <h1>Who am I?</h1>
@@ -30,12 +42,12 @@
                 <img class="img-fluid rounded-3 shadow-lg m-auto" src="/images/profile.jpg">
             </div>
         </div>
-        <div class="container-fluid text-center m-0 py-4 bg-light" style="height: 100vh;">
-            <h1>Projects</h1>
+        <div id="projects" class="parallax projects-img container-fluid text-center m-0 py-4">
+            <h1 class="text-dark m-5">Projects</h1>
             <div class="row align-items-center h-75">
-                <button id="previous" class="btn btn-light h-100 col-2" onclick="previousProject()">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
-                        <path d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+                <button id="previous" class="btn h-100 col-2 text-dark" onclick="previousProject()">
+                    <svg class="w-100" xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
                     </svg>
                 </button>
                 <div class="col-8">
@@ -55,34 +67,84 @@
                         </div>
                     </div>        
                 </div>
-                <button id="next" class="btn btn-light h-100 col-2" onclick="nextProject()">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
-                        <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                <button id="next" class="btn h-100 col-2 text-dark" onclick="nextProject()">
+                    <svg class="w-100"  xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
                     </svg>
                 </button>
             </div>
-            
+
         </div>
-        <hr>
-        <div class="container-fluid">
-            <h1>Experience</h1>
-            <ul>
-                <li>hellou</li>
-            </ul>
+        
+        <div id="experience" class="parallax experience-img container-fluid text-center m-0 py-4">
+            <h1 class="text-dark m-5">Experience</h1>
+            <div class="row align-items-center h-75"></div>
+        </div>    
+
+        <div id="about" class="parallax about-img container-fluid text-center m-0 py-4">
+            <h1 class="text-dark m-5">About me</h1>
+            <div class="row align-items-center h-75">
+                <ul>
+                    <li>Speak spanish, english and a bit of german, hallo.</li>
+                    <li>I love fiction, superheroes, harry potter, starwars, etc.</li>
+                    <li>My favorite sport is Formula 1.</li>
+                    <li>I am a competitive programmer! </li>
+                    <li>My favorite artist is Logic and my favorite band is Muse </li>
+                </ul>
+            </div>
         </div>
-        <hr>
-        <div class="container-fluid">
-            <h1>About me</h1>
-            <ul>
-                <li>Speak spanish, english and a bit of german, hallo.</li>
-                <li>I love fiction, superheroes, harry potter, starwars, etc.</li>
-                <li>My favorite sport is Formula 1.</li>
-                <li>I am a competitive programmer! </li>
-                <li>My favorite artist is Logic and my favorite band is Muse </li>
-            </ul>
-        </div>
+
+        
     </main>
-    <footer></footer>
+    <footer class="bg-dark container-fluid">
+        <div class="row p-5">
+            <div class="col-lg-4 col-sm-6 col-12">
+                <a href="#top" class="navbar-brand text-light text-decoration-none m-5">Dario Mtz</a>
+                <hr>
+                <p>
+                    <a class="text-light text-decoration-none" href="https://github.com/dariomtz/" target="_blank">
+                        Github
+                    </a>
+                </p>
+                <p>
+                    <a class="text-light text-decoration-none" href="https://instagram.com/dariongo_" target="_blank">
+                        Instagram
+                    </a>
+                </p>
+                <p>
+                    <a class="text-light text-decoration-none" href="https://twitter.com/dario_mtzr" target="_blank">
+                        Twitter
+                    </a>
+                </p>
+                <p>
+                    <a class="text-light text-decoration-none" href="https://www.linkedin.com/in/gustavo-dario-martinez-ramos-611b6a18a/" target="_blank">
+                        Linkedin
+                    </a>
+                </p>
+                <p>
+                    <a class="text-light text-decoration-none" href="https://www.facebook.com/dariomartinezr12" target="_blank">
+                        Facebook
+                    </a>
+                </p>
+                <p>
+                    <a class="text-light text-decoration-none" href="mailto:gusdamtzr@gmail.com" target="_blank">
+                        Email
+                    </a>
+                </p>             
+            </div>
+            <div class="col-lg-8 col-sm-6 col-12 mt-5 mt-sm-0">
+                <div class="d-inline-block mt-0 m-5">
+                    <a class="text-light text-decoration-none" href="#projects">Projects</a>
+                </div>
+                <div class="d-inline-block mt-0 m-5">
+                    <a class="text-light text-decoration-none" href="#experience">Experience</a>
+                </div>
+                <div class="d-inline-block mt-0 m-5">
+                    <a class="text-light text-decoration-none" href="#about">About me</a>
+                </div>
+            </div>
+        </div>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
     <script src="script.js"></script>
   </body>
