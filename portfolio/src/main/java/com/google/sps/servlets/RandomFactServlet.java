@@ -12,11 +12,11 @@ import javax.servlet.http.HttpServletResponse;
 public class RandomFactServlet extends HttpServlet{
     Random random = new Random();
     String[] facts = {
-        "I am currently learning german!. Deusch macht spaß.",
-        "I love fiction, superheroes, harry potter, starwars, etc.",
+        "I am currently learning german. Deusch macht spaß!",
+        "I love reading and watching fiction stories. My favorite fictional character is Peter Parker!",
         "My favorite sport is Formula 1.",
-        "I am a competitive programmer!.",
-        "My favorite artist is Logic and my favorite band is Muse."
+        "I am a competitive programmer! My favorite competition is Google Kickstart.",
+        "My favorite music artist is Logic and my favorite band is Muse."
     };
 
     @Override
