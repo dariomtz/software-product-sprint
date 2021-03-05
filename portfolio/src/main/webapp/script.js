@@ -194,3 +194,10 @@ function showExperience(){
     document.getElementById('experienceLink').setAttribute('href', experience.link);
     document.getElementById('experienceImage').setAttribute('src', experience.image);
 }
+
+async function getRandomFact(){
+    let request = await fetch('/random-fact');
+    let text = await request.text();
+    let fact = document.getElementById("fact");
+    fact.innerText = text;
+}

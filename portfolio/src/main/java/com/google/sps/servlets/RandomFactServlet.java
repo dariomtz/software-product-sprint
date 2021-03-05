@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 public class RandomFactServlet extends HttpServlet{
     Random random = new Random();
     String[] facts = {
-        "I am currently learning german. Deusch macht spaß!",
+        "I am currently learning german. Deusch macht spass!",
         "I love reading and watching fiction stories. My favorite fictional character is Peter Parker!",
         "My favorite sport is Formula 1.",
         "I am a competitive programmer! My favorite competition is Google Kickstart.",
@@ -21,7 +21,7 @@ public class RandomFactServlet extends HttpServlet{
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException{
-        response.setContentType("text/html;");
-        response.getWriter().println("<h1>" + facts[random.nextInt(facts.length)] + "</h1>");
+        response.setContentType("text");
+        response.getWriter().println(facts[random.nextInt(facts.length)]);
     }
 }
