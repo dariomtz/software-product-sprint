@@ -213,6 +213,10 @@ function getRandomFact(){
     if (!facts){
         return;
     }
-    let fact = document.getElementById("fact");
-    fact.innerText = facts[randomInt(facts.length)];
+    let randomFact = facts[randomInt(facts.length)]
+    let fact = document.getElementById('fact');
+    fact.innerText = randomFact.text;
+
+    let aboutDiv = document.getElementById('about');
+    aboutDiv.style.backgroundImage = `url(${ randomFact.image })`;
 }
