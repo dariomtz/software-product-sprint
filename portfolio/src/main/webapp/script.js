@@ -200,7 +200,7 @@ var facts = null;
 document.addEventListener("DOMContentLoaded", getRandomFacts);
 
 async function getRandomFacts(){
-    let request = await fetch('/random-fact');
+    let request = await fetch('/random-facts');
     let text = await request.json();
     facts = text;
 }
