@@ -95,6 +95,12 @@ const experiences = [
         image: 'https://w7.pngwing.com/pngs/543/934/png-transparent-google-app-logo-google-logo-g-suite-google-text-logo-circle.png',
     },
     {
+        title: 'Internship Preparation Course',
+        description: 'I try to help people in my community by teaching this course with relevant topics to land an interview and prepare for it.',
+        link: 'https://interns-gdl.web.app/post/2935863649331732177',
+        image: 'https://1.bp.blogspot.com/-bsCfc6qwAiA/YAWTsa7W6aI/AAAAAAAAhaQ/7w3Cy4q0desSkg3wrYgtbhP8k9dFHRFugCLcBGAsYHQ/w400-h400/INTERNS%2BGDL.png',
+    },
+    {
         title: 'Google Foobar',
         description: 'In 2020, I got an invitation to the secret hiring challenge and solved up to level 4 (out of five)',
         link: 'https://foobar.withgoogle.com/',
@@ -195,9 +201,28 @@ function showExperience(){
     document.getElementById('experienceImage').setAttribute('src', experience.image);
 }
 
-async function getRandomFact(){
-    let request = await fetch('/random-fact');
-    let text = await request.text();
-    let fact = document.getElementById("fact");
-    fact.innerText = text;
+var facts = null;
+
+document.addEventListener("DOMContentLoaded", getRandomFacts);
+
+async function getRandomFacts(){
+    let request = await fetch('/random-facts');
+    let text = await request.json();
+    facts = text;
+}
+
+function randomInt(max){
+    return Math.floor(max * Math.random());
+}
+
+function getRandomFact(){
+    if (!facts){
+        return;
+    }
+    let randomFact = facts[randomInt(facts.length)]
+    let fact = document.getElementById('fact');
+    fact.innerText = randomFact.text;
+
+    let aboutDiv = document.getElementById('about');
+    aboutDiv.style.backgroundImage = `url(${ randomFact.image })`;
 }
