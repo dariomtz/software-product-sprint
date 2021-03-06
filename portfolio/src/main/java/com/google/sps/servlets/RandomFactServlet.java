@@ -23,12 +23,12 @@ public class RandomFactServlet extends HttpServlet{
         facts.add("My favorite music artist is Logic and my favorite band is Muse.");
 
         String json = convertToJson(facts);
-        
+
         response.setContentType("application/json");
         response.getWriter().println(json);
     }
 
-    private String convertToJson(ArrayList list) {
+    private String convertToJson(ArrayList<String> list) {
         Gson gson = new Gson();
         String json = gson.toJson(list);
         return json;

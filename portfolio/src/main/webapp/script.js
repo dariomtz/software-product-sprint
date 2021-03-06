@@ -195,9 +195,24 @@ function showExperience(){
     document.getElementById('experienceImage').setAttribute('src', experience.image);
 }
 
-async function getRandomFact(){
+var facts = null;
+
+document.addEventListener("DOMContentLoaded", getRandomFacts);
+
+async function getRandomFacts(){
     let request = await fetch('/random-fact');
-    let text = await request.text();
+    let text = await request.json();
+    facts = text;
+}
+
+function randomInt(max){
+    return Math.floor(max * Math.random());
+}
+
+function getRandomFact(){
+    if (!facts){
+        return;
+    }
     let fact = document.getElementById("fact");
-    fact.innerText = text;
+    fact.innerText = facts[randomInt(facts.length)];
 }
