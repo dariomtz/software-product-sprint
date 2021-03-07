@@ -20,6 +20,7 @@
                     <a class="nav-link" href="#projects">Projects</a>
                     <a class="nav-link" href="#experience">Experience</a>
                     <a class="nav-link" href="#about">About me</a>
+                    <a class="nav-link" href="#contact">Contact</a>
                     <a class="nav-link" href="/files/resume.pdf" target="_blank">Resume</a>
                 </div>
                 </div>
@@ -122,7 +123,22 @@
                 </div>
             </div>
         </div>
-
+        <div id="contact" class="container py-5">
+            <h1 class="mt-5 mb-3">Contact me</h1>
+            <form action="/contact-me" method="POST">
+                <div class="mb-3">
+                    <label for="contactEmail" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="contactEmail" name="email">
+                    <div id="emailHelp" class="form-text">For me to be able to contact you back.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea class="form-control" id="message" name="message"></textarea>
+                </div>
+                <button type="submit" class="btn btn-dark">Submit</button>
+            </form>
+            <p id="confirmation"></p>
+        </div>
         
     </main>
     <footer class="bg-dark container-fluid">
