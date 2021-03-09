@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Dario Mtz</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="/images/icon.svg" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
   </head>
   <body>
@@ -128,12 +129,12 @@
             <form action="/contact-me" method="POST">
                 <div class="mb-3">
                     <label for="contactEmail" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="contactEmail" name="email">
+                    <input type="email" class="form-control" id="contactEmail" name="email" required>
                     <div id="emailHelp" class="form-text">For me to be able to contact you back.</div>
                 </div>
                 <div class="mb-3">
                     <label for="message" class="form-label">Message</label>
-                    <textarea class="form-control" id="message" name="message"></textarea>
+                    <textarea class="form-control" id="message" name="message" required></textarea>
                 </div>
                 <button type="submit" class="btn btn-dark">Submit</button>
             </form>
