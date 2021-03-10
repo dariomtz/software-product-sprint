@@ -10,14 +10,16 @@ import com.google.cloud.datastore.Entity;
 import com.google.cloud.datastore.FullEntity;
 import com.google.cloud.datastore.Datastore;
 import com.google.cloud.datastore.KeyFactory;
+import org.jsoup.Jsoup;
+import org.jsoup.safety.Whitelist;
 
 @WebServlet("/contact-me")
 public class ContactMeServlet extends HttpServlet{
 
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String email = request.getParameter("email");
-        String message = request.getParameter("message");
+        String email = Jsoup.clean(request.getParameter("email"), Whitelist.none());
+        String message = Jsoup.clean(request.getParameter("message"), Whitelist.none());
         long timestamp = System.currentTimeMillis();
 
         Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
