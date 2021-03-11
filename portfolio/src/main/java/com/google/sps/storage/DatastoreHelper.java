@@ -13,9 +13,9 @@ import com.google.cloud.datastore.StructuredQuery.OrderBy;
 import java.lang.reflect.*;
 
 public class DatastoreHelper <T>{
-    Datastore datastore;
-    KeyFactory keyFactory;
-    String kind;
+    private final Datastore datastore;
+    private final KeyFactory keyFactory;
+    private final String kind;
 
     public DatastoreHelper(String kind){
         this.kind = kind;
