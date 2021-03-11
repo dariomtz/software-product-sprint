@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import com.google.sps.data.ContactMeMessage;
+import com.google.sps.storage.DatastoreContactMe;
 import com.google.sps.storage.DatastoreHelper;
 
 import org.jsoup.Jsoup;
@@ -13,7 +14,7 @@ import org.jsoup.safety.Whitelist;
 
 @WebServlet("/contact-me")
 public class ContactMeServlet extends HttpServlet{
-    private final DatastoreHelper<ContactMeMessage> helper = new DatastoreHelper<>("Message");
+    private final DatastoreHelper<ContactMeMessage> helper = new DatastoreContactMe("Message");
 
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException{

@@ -11,8 +11,9 @@ import com.google.cloud.datastore.QueryResults;
 import com.google.cloud.datastore.StructuredQuery.OrderBy;
 
 import java.lang.reflect.*;
+import java.util.ArrayList;
 
-public class DatastoreHelper <T>{
+public abstract class DatastoreHelper <T>{
     private final Datastore datastore;
     private final KeyFactory keyFactory;
     private final String kind;
@@ -27,7 +28,10 @@ public class DatastoreHelper <T>{
         datastore.put(toEntity(element));
     }
 
-    FullEntity<?> toEntity(T element){
+    protected abstract T convertEntity(Entity entity);
+    public abstract ArrayList<T> listFromQuery(QueryResults<Entity> results);
+
+    private FullEntity<?> toEntity(T element){
         Class<?> classType= element.getClass();
         Field[] fields = classType.getDeclaredFields();
 
