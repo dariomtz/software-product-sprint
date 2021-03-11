@@ -6,6 +6,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.google.cloud.datastore.StructuredQuery.OrderBy;
 import com.google.gson.Gson;
 import com.google.sps.data.ContactMeMessage;
 import com.google.sps.storage.DatastoreHelper;
@@ -16,7 +18,7 @@ public class ListContactMeServlet extends HttpServlet{
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException{
         DatastoreHelper<ContactMeMessage> helper = new DatastoreHelper<>("Message");
-        ArrayList<ContactMeMessage> messages = ContactMeMessage.createList(helper.queryAll("timestamp"));
+        ArrayList<ContactMeMessage> messages = ContactMeMessage.createList(helper.queryAll(OrderBy.desc("timestamp")));
 
         Gson gson = new Gson();
 

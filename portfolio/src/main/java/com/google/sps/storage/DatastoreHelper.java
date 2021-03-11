@@ -57,9 +57,9 @@ public class DatastoreHelper <T>{
         return datastore.run(query);
     }
 
-    public QueryResults<Entity> queryAll(String order) {
+    public QueryResults<Entity> queryAll(OrderBy order, OrderBy ... others) {
         Query<Entity> query = Query.newEntityQueryBuilder().setKind(kind)
-                                .setOrderBy(OrderBy.desc(order))
+                                .setOrderBy(order, others)
                                 .build();
         return datastore.run(query);
     }
