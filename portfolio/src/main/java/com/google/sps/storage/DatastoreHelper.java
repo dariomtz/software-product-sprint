@@ -24,6 +24,10 @@ public class DatastoreHelper <T>{
     }
 
     public void put(T element){
+        datastore.put(toEntity(element));
+    }
+
+    FullEntity<?> toEntity(T element){
         Class<?> classType= element.getClass();
         Field[] fields = classType.getDeclaredFields();
 
@@ -48,8 +52,7 @@ public class DatastoreHelper <T>{
                     classType.getName());
             }   
         }
-        FullEntity<?> entity = entityBuilder.build();
-        datastore.put(entity);
+        return entityBuilder.build();
     }
 
     public QueryResults<Entity> queryAll() {
