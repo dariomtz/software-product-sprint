@@ -13,6 +13,7 @@ import org.jsoup.safety.Whitelist;
 
 @WebServlet("/contact-me")
 public class ContactMeServlet extends HttpServlet{
+    private final DatastoreHelper<ContactMeMessage> helper = new DatastoreHelper<>("Message");
 
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException{
@@ -20,7 +21,6 @@ public class ContactMeServlet extends HttpServlet{
         String message = Jsoup.clean(request.getParameter("message"), Whitelist.none());
         long timestamp = System.currentTimeMillis();
 
-        DatastoreHelper<ContactMeMessage> helper = new DatastoreHelper<>("Message");
         ContactMeMessage newMessage = new ContactMeMessage(timestamp, email, message);
         helper.put(newMessage);
         

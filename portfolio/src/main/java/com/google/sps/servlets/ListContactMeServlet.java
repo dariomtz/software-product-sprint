@@ -14,10 +14,10 @@ import com.google.sps.storage.DatastoreHelper;
 
 @WebServlet("/list-contact-me")
 public class ListContactMeServlet extends HttpServlet{
+    private final DatastoreHelper<ContactMeMessage> helper = new DatastoreHelper<>("Message");
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException{
-        DatastoreHelper<ContactMeMessage> helper = new DatastoreHelper<>("Message");
         ArrayList<ContactMeMessage> messages = ContactMeMessage.createList(helper.queryAll(OrderBy.desc("timestamp")));
 
         Gson gson = new Gson();
