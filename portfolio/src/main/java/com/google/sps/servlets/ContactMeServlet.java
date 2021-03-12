@@ -14,7 +14,7 @@ import org.jsoup.safety.Whitelist;
 
 @WebServlet("/contact-me")
 public class ContactMeServlet extends HttpServlet{
-    private final DatastoreHelper<ContactMeMessage> helper = new DatastoreContactMe("Message");
+    private final DatastoreHelper<ContactMeMessage> helper = new DatastoreContactMe();
 
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException{

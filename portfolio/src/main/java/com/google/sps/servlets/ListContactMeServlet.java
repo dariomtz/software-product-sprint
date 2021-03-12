@@ -15,7 +15,7 @@ import com.google.sps.storage.DatastoreHelper;
 
 @WebServlet("/list-contact-me")
 public class ListContactMeServlet extends HttpServlet{
-    private final DatastoreHelper<ContactMeMessage> helper = new DatastoreContactMe("Message");
+    private final DatastoreHelper<ContactMeMessage> helper = new DatastoreContactMe();
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException{

@@ -29,7 +29,16 @@ public abstract class DatastoreHelper <T>{
     }
 
     protected abstract T convertEntity(Entity entity);
-    public abstract ArrayList<T> listFromQuery(QueryResults<Entity> results);
+
+    public ArrayList<T> listFromQuery(QueryResults<Entity> results){
+        ArrayList<T> list = new ArrayList<>();
+        
+        while(results.hasNext()){
+            list.add(convertEntity(results.next()));
+        }
+
+        return list;
+    }
 
     private FullEntity<?> toEntity(T element){
         Class<?> classType= element.getClass();
@@ -70,6 +79,5 @@ public abstract class DatastoreHelper <T>{
                                 .build();
         return datastore.run(query);
     }
-
-
+    
 }
