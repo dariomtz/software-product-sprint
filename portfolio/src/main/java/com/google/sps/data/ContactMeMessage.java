@@ -13,6 +13,13 @@ public class ContactMeMessage {
         this.message = message;
     }
 
+    public ContactMeMessage(long timestamp, String email, String message){
+        this.timestamp = timestamp;
+        this.email = email;
+        this.message = message;
+        this.id = 0;
+    }
+
     public long getId(){
         return this.id;
     }
