@@ -68,16 +68,16 @@ public abstract class DatastoreHelper <T>{
         return entityBuilder.build();
     }
 
-    public QueryResults<Entity> queryAll() {
+    public ArrayList<T> queryAll() {
         Query<Entity> query = Query.newEntityQueryBuilder().setKind(kind).build();
-        return datastore.run(query);
+        return listFromQuery(datastore.run(query));
     }
 
-    public QueryResults<Entity> queryAll(OrderBy order, OrderBy ... others) {
+    public ArrayList<T> queryAll(OrderBy order, OrderBy ... others) {
         Query<Entity> query = Query.newEntityQueryBuilder().setKind(kind)
                                 .setOrderBy(order, others)
                                 .build();
-        return datastore.run(query);
+        return listFromQuery(datastore.run(query));
     }
     
 }

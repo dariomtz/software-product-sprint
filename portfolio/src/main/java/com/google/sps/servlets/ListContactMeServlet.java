@@ -19,7 +19,7 @@ public class ListContactMeServlet extends HttpServlet{
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException{
-        ArrayList<ContactMeMessage> messages = helper.listFromQuery(helper.queryAll(OrderBy.desc("timestamp")));
+        ArrayList<ContactMeMessage> messages = helper.queryAll(OrderBy.desc("timestamp"));
         
         Gson gson = new Gson();
 
