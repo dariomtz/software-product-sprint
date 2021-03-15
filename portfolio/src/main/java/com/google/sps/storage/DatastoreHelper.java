@@ -28,6 +28,10 @@ public abstract class DatastoreHelper <T>{
         datastore.put(toEntity(element));
     }
 
+    public void delete(long id){
+        datastore.delete(keyFactory.newKey(id));
+    }
+
     protected abstract T convertEntity(Entity entity);
 
     public ArrayList<T> listFromQuery(QueryResults<Entity> results){

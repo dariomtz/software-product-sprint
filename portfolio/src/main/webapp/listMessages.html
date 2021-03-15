@@ -32,8 +32,32 @@
         </nav>
     </header>
     <main class="pt-5">
+        <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="confirmDeleteModalLabel">Are you sure?</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            Are you sure that you want to delete the message from <span id="emailModal" class="fw-bold"></span> ?
+                        </p>
+                        <p>
+                            Once you delete this, you will not be able to see it again. Be sure that you address it before deleting it.
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button id="btnDelelte" type="button" class="btn btn-danger" data-bs-dismiss="modal">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div id="container" class="container-fluid p-5">
             <h1>Messages</h1>
+            <div id="alerts"></div>
+            <ul id="listMessages" class="list-group"></ul>
         </div>
         
     </main>

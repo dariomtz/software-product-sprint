@@ -28,4 +28,10 @@ public class ContactMeServlet extends HttpServlet{
         System.out.printf("Email: %s\nMessage: %s\n", email, message);
         response.sendRedirect("/confirm.html");
     }
+
+    @Override
+    public void doDelete(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        long id = Long.parseLong(request.getParameter("id"));
+        helper.delete(id);
+    }
 }
