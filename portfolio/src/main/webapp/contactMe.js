@@ -38,7 +38,6 @@ function messageToHTML({ id, email, message, timestamp}){
 }
 
 function confirmDelete(id, email){
-    console.log('This is working hehge');
     let span = document.getElementById('emailModal');
     span.innerText = email;
 
@@ -46,16 +45,15 @@ function confirmDelete(id, email){
     btn.setAttribute('onclick', `deleteMessage(${ id })`);
 }
 
-function deleteMessage(id){
-    let xhttp = new XMLHttpRequest();
-    xhttp.open('DELETE', `/contact-me?id=${ id }`);
-    xhttp.send();
-    xhttp.onload = function(){
-        if (xhttp.status == 200) {
-            deleteSuccessful(id);
-        }else{
-            throw Error(`${ xhr.status }: ${ xhr.statusText }`)
-        }
+async function deleteMessage(id){
+    let response = await fetch(`/contact-me?id=${ id }`, {
+        method: 'DELETE'
+    });
+
+    if(response.ok){
+        deleteSuccessful(id);
+    }else{
+        throw Error(`Not able to delete ${ id } due to an error in the http request`);
     }
 }
 
